@@ -15,8 +15,34 @@ import Logo from './assets/img/vilaapp-logo.png'
           <div className="logo-container">
             <img src={Logo} alt="vilaapp logo"   />
           </div> 
-          <div className="email-container">
 
+          <div className="email-container">
+            <h1>we are working on something very interesting!</h1>
+            <h3>be notified. we just need your email address.</h3>
+            <div className="email-input-container">
+              <div className="bg-fff">
+                  <input
+                  className="input-email"
+                  placeholder="Email"
+                  name="email"
+                  
+                  />
+
+                <div className="btn-container">
+                  <span>Send</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="socila-container">
+            <ul>
+              <li> a </li>
+              <li> a </li>
+              <li> a </li>
+              <li> a </li>
+            </ul>
           </div>
        </div>
       );

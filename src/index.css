@@ -38,17 +38,64 @@ code {
 
 }
 
-.logo-container{
-  background-color: red;
+.logo-container{ 
   width: 100%;
   text-align: center;
   padding: 50px 10px;
 
 }
 
-.email-container{
-  background-color: yellow;
+.email-container{ 
+  width: 100%; 
+  text-align: center;
+  padding: 20px 0;
+
+}
+
+.socila-container{
+  background-color: green;
   width: 100%;
   height: 100px;
   text-align: center;
+}
+
+.email-input-container{ 
+  border-radius: 100px;
+  width: 500px; 
+  margin: auto;
+  border: 5px solid rgba(255, 255, 255, 0.200);
+
+}
+
+.bg-fff{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+
+}
+.input-email{ 
+  background-color: transparent;
+  border-radius: 100px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 20px;
+   
+}
+
+.btn-container{
+  background-color: #1FC056;
+  color: #fff;
+  padding: 20px 50px;
+  border-radius: 100px;
+  transition: background-color 0.5s ease;
+  font-weight: 700;
+    
+}
+
+.btn-container:hover {
+background-color: #1CAE4E;
+
+
 }
