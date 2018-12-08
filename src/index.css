@@ -55,8 +55,9 @@ code {
 .socila-container{
   background-color: green;
   width: 100%;
-  height: 100px;
-  text-align: center;
+  position: fixed; 
+  bottom: 0;
+  padding: 100px 5px; 
 }
 
 .email-input-container{ 
@@ -95,7 +96,28 @@ code {
 }
 
 .btn-container:hover {
-background-color: #1CAE4E;
+  background-color: #1CAE4E;
+}
 
+.socila-container ul {
+  list-style-image: none;
+  display: flex;
+  flex-direction: row;
+  margin: auto; 
+  justify-content: center;
 
+}
+
+.socila-container ul li{
+  
+  background-color: red; 
+  text-align: center;
+  margin: 5px;
+  
+  
+
+}
+
+.socila-container ul li a {
+  padding: 20px 10px;
 }

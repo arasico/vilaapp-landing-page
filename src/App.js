@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Logo from './assets/img/vilaapp-logo.png'
 
+//
+// import icons ------>
+//
+
+import facebook from './assets/img/facebook.svg';
+import instagram from './assets/img/instagram.svg';
+import twitter from './assets/img/twitter.svg';
+
+
  class Index extends Component {
    constructor(props) {
      super(props);
@@ -38,10 +47,10 @@ import Logo from './assets/img/vilaapp-logo.png'
 
           <div className="socila-container">
             <ul>
-              <li> a </li>
-              <li> a </li>
-              <li> a </li>
-              <li> a </li>
+              <li> <a href="#" ><img src={facebook} alt="vilaapp facebook" height="25" width="25" /></a></li>
+              <li> <a href="#" ><img src={instagram} alt="vilaapp instagram" height="25" width="25" /></a></li>
+              <li> <a href="#" ><img src={twitter} alt="vilaapp twitter" height="25" width="25" /></a></li>
+    
             </ul>
           </div>
        </div>
