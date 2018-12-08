@@ -73,19 +73,119 @@ code {
 }
 
 .socila-container{ 
-  width: 100%;
+  width: 100%; 
   position: fixed; 
   bottom: 0;
   padding: 100px 5px;  
 }
 
-.email-input-container{ 
+.email-input-container{  
+  /* visibility: hidden; */
+  display: block;
   border-radius: 100px;
   width: 500px; 
   margin: auto;
   border: 5px solid rgba(255, 255, 255, 0.200);
   
 
+}
+
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideOutDown {
+  0% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  100% { 
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  }
+  }
+  @keyframes slideOutDown {
+  0% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  100% { 
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  }
+  } 
+
+
+  
+
+.success-message-container{ 
+  width: 700px; 
+  margin: auto; 
+  background-color: #fff;
+  border-radius: 10px;
+  display: none;
+}
+
+.success-message-container h1{ 
+  padding-top: 30px;
+ color: #333;
+ text-shadow: none;
+
+}
+
+.success-message-container  h3{ 
+  color: #888;
+  text-shadow: none;
+}
+
+
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  } 
+
+
+
+
+
+.img-check{ 
+  float: left;
+  padding: 20px;
+  vertical-align: middle;
 }
 
 .bg-fff{
@@ -151,6 +251,13 @@ code {
 
   .socila-container{ 
     padding: 20px;
+
+  }
+  .success-message-container{ 
+    width:95%; 
+    margin: auto; 
+    background-color: #fff;
+    border-radius: 10px;
   }
 
 

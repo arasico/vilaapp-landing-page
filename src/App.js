@@ -10,6 +10,7 @@ import facebook from './assets/img/facebook.svg';
 import instagram from './assets/img/instagram.svg';
 import twitter from './assets/img/twitter.svg';
 import linkedin from './assets/img/linkedin.svg';
+import checked from './assets/img/checked.svg';
 
 
  class Index extends Component {
@@ -30,7 +31,9 @@ import linkedin from './assets/img/linkedin.svg';
    callPost(){
       if(this.state.val !== '')
       {
-       alert("your email addres: " + this.state.val)
+      // alert("your email addres: " + this.state.val)
+       document.getElementsByClassName("success-message-container")[0].style.display = "block"
+       document.getElementsByClassName("email-input-container")[0].style.display = "none"
       }
       else
       {
@@ -51,7 +54,7 @@ import linkedin from './assets/img/linkedin.svg';
               <h1><b>we are working on something</b> very interesting!</h1>
               <h3><b>be notified.</b> we just need your email address.</h3>
 
-              <div className="email-input-container">
+              <div className="email-input-container slideOutDown">
                   <div className="bg-fff">
                       <input
                       className="input-email"
@@ -66,6 +69,14 @@ import linkedin from './assets/img/linkedin.svg';
                       </div>
                   </div>
               </div>
+
+                  <div className="success-message-container fadeInUp">
+                    <img src={checked} height="110" width="110" alt="Check" className="img-check"/>
+                    <h1>Your email has been successfully.</h1>
+                    <h3>Thanks, Soon we will have good news for you!</h3>
+                  </div>
+
+
           </div>
 
           <div className="socila-container">
