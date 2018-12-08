@@ -15,8 +15,30 @@ import linkedin from './assets/img/linkedin.svg';
  class Index extends Component {
    constructor(props) {
      super(props);
-     this.state = {  }
+     this.state = { val:'' }
+     this.handelChange = this.handelChange.bind(this);
+     this.callPost = this.callPost.bind(this);
+
    }
+
+
+   handelChange = async(e) => {
+    await this.setState({val: e.target.value}) 
+
+   }
+
+   callPost(){
+      if(this.state.val !== '')
+      {
+       alert("your email addres: " + this.state.val)
+      }
+      else
+      {
+        alert("Please insert your email Address!");
+      }
+   }
+
+
    render() { 
      return ( 
        <div className="bg-container">
@@ -36,9 +58,10 @@ import linkedin from './assets/img/linkedin.svg';
                       placeholder="Email"
                       name="email"
                       autocomplete="off"
-                      
+                      onChange={this.handelChange}
+                      value={this.state.val}
                       />
-                      <div className="btn-container">
+                      <div className="btn-container" onClick={this.callPost}>
                         <span>Send</span>
                       </div>
                   </div>
