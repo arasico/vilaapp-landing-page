@@ -35,6 +35,7 @@ import linkedin from './assets/img/linkedin.svg';
                   className="input-email"
                   placeholder="Email"
                   name="email"
+                  autocomplete="off"
                   
                   />
 
