@@ -76,7 +76,7 @@ code {
   width: 100%;
   position: fixed; 
   bottom: 0;
-  padding: 100px 5px; 
+  padding: 100px 5px;  
 }
 
 .email-input-container{ 
@@ -84,6 +84,7 @@ code {
   width: 500px; 
   margin: auto;
   border: 5px solid rgba(255, 255, 255, 0.200);
+  
 
 }
 
@@ -100,7 +101,7 @@ code {
   border-radius: 100px;
   width: 100%;
   font-size: 16px;
-  padding: 0 20px;
+  padding: 0 20px; 
    
 }
 
@@ -147,4 +148,11 @@ code {
   .email-input-container{
     width: 100%;
   }
+
+  .socila-container{ 
+    padding: 20px;
+  }
+
+
+  
 }
