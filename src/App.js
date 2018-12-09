@@ -47,7 +47,7 @@ import checked from './assets/img/checked.svg';
        <div className="bg-container">
 
           <div className="logo-container">
-            <img src={Logo} alt="vilaapp logo"   />
+            <img src={Logo} className="logo-img-st" alt="vilaapp logo"   />
           </div> 
 
           <div className="email-container">
