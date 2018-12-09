@@ -36,19 +36,21 @@ code {
   display: flex;
   flex-direction: column;
 
+
 }
 
 .logo-container{ 
   width: 100%;
   text-align: center;
-  padding: 50px 10px;
+  padding: 50px 10px; 
+
 
 }
 
 .email-container{ 
   width: 100%; 
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0; 
 
 }
 
@@ -76,7 +78,7 @@ code {
   width: 100%; 
   position: fixed; 
   bottom: 0;
-  padding: 100px 5px;  
+  padding-bottom: 30px; 
 }
 
 .email-input-container{  
@@ -90,7 +92,7 @@ code {
 
 }
 
-.slideOutDown {
+.slideOutDown { 
   -webkit-animation-name: slideOutDown;
   animation-name: slideOutDown;
   -webkit-animation-duration: 1s;
@@ -104,8 +106,8 @@ code {
   transform: translateY(0);
   }
   100% { 
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
   }
   }
   @keyframes slideOutDown {
@@ -114,8 +116,8 @@ code {
   transform: translateY(0);
   }
   100% { 
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
   }
   } 
 
@@ -244,9 +246,14 @@ code {
 
 
 
-@media only screen and (max-width:510px) {
+@media only screen and (max-width:590px) {
+
+  .logo-container{
+    padding: 5px 10px;
+
+  }
   .email-input-container{
-    width: 100%;
+    width: 90%;
   }
 
   .socila-container{ 
@@ -258,6 +265,10 @@ code {
     margin: auto; 
     background-color: #fff;
     border-radius: 10px;
+  }
+
+  .email-container h3{
+    padding-bottom: 5px;
   }
 
 
