@@ -72,8 +72,8 @@ import checked from './assets/img/checked.svg';
 
                   <div className="success-message-container fadeInUp">
                     <img src={checked} height="110" width="110" alt="Check" className="img-check"/>
-                    <h1>Your email has been successfully.</h1>
-                    <h3>Thanks, Soon we will have good news for you!</h3>
+                    <p>Your email has been successfully.</p>
+                    <p>Thanks, Soon we will have good news for you!</p>
                   </div>
 
 

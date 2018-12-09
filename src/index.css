@@ -50,8 +50,7 @@ code {
 .email-container{ 
   width: 100%; 
   text-align: center;
-  padding: 20px 0; 
-  background-color: red;
+  padding: 20px 0;  
 
 }
 
@@ -82,8 +81,7 @@ code {
   bottom: 0;
   padding-bottom: 30px; 
   position:absolute;
-  bottom:0;
-  background-color: yellow;
+  bottom:0; 
 }
 
 .email-input-container{  
@@ -133,6 +131,7 @@ code {
 
 .success-message-container{ 
   width: 700px; 
+  height: 100px;
   margin: auto; 
   background-color: #fff;
   border-radius: 10px;
@@ -149,6 +148,10 @@ code {
 .success-message-container  h3{ 
   color: #888;
   text-shadow: none;
+}
+
+.success-message-container p {
+  padding: 10px;
 }
 
 
