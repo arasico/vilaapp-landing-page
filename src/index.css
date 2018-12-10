@@ -253,6 +253,16 @@ code {
   padding: 20px 10px;
 }
 
+.error-container{
+  background-color: #E74C3C;
+  width: 30%;
+  margin: auto;
+  padding: 10px 5px;
+  color: #fff;
+  border-radius: 50px;
+  border:1px solid #CB4335;
+}
+
 
 h1{
   font-size:3vw;
@@ -260,6 +270,28 @@ h1{
 h3{
   font-size:2vw;
 }
+
+
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+  }
+  @keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+  } 
+
+
+  
 
 @media only screen and (max-width:590px) {
 

@@ -19,7 +19,7 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
  class Index extends Component {
    constructor(props) {
      super(props);
-     this.state = { val:'' }
+     this.state = { val:'', errorMessage:'' }
      this.handelChange = this.handelChange.bind(this);
      this.callPost = this.callPost.bind(this);
 
@@ -43,39 +43,23 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
         email:email 
       }),
       
-  }
+    }
  
-  //  await fetch(baseurl ,data)
-  //   .then( response => response.json())
-  //   .then(json => console.log(json.status))
 
-//   await fetch(baseurl ,data)
-//   .then( 
-//     function(response) {
- 
-//       return response.json(); 
-//   })
-//   .then(function(json){ 
-//    console.log(json.status)
-// })
-//   .catch (err => console.log(err))  
-
-
-
-    await fetch(baseurl ,data)
-    .then(function(response) {
-      if (!response.ok) {
-          throw Error(response.statusText);
-      }
-      return response;
-    })
-    .then(function(response) {
-      console.log("ok, Succsessfuly Added");
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
- 
+      await fetch(baseurl ,data)
+      .then(function(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+      })
+      .then(function(response) {
+        console.log("ok, Succsessfuly Added");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  
  
    }
 
@@ -90,15 +74,17 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
 
  
    callPost(){
-      if(this.state.val !== '')
+     console.log(this.state.val.includes('@'))
+      if(this.state.val !== '' && this.state.val.includes('@') === true  )
       {
+        this.setState({errorMessage: ''})
         this.fetchingData(this.state.val);
         this.successfully();
 
       }
       else
-      {
-        alert("Please insert your email Address!");
+      { 
+        this.setState({errorMessage: 'Please insert Valid email Address!'})
       }
    }
 
@@ -115,6 +101,14 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
               <h1><b>we are working on something</b> very interesting!</h1>
               <h3><b>be notified.</b> we just need your email address.</h3>
 
+
+            { this.state.errorMessage ? 
+            (  <div className="error-container fadeIn">
+            <p>{this.state.errorMessage}</p>
+          </div>):(
+            ''
+          )}
+
               <div className="email-input-container slideOutDown">
                   <div className="bg-fff">
                       <input
@@ -129,6 +123,7 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
                       </div>
                   </div>
               </div>
+          
 
                   <div className="success-message-container fadeInUp">
                     <img src={checked} height="110" width="110" alt="Check" className="img-check"/>
@@ -138,6 +133,8 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
 
 
           </div>
+
+           
 
           <div className="socila-container">
               <ul>
