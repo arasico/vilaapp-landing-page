@@ -291,7 +291,7 @@ h3{
   } 
 
 
-  
+
 
 @media only screen and (max-width:590px) {
 
@@ -326,7 +326,18 @@ h3{
   .logo-img-st{
     height: 50px;
   }
+  .error-container{ 
+    width: 90%; 
+  }
 
 
   
+}
+
+@media only screen and (max-width:900px) {
+
+  .error-container{ 
+    width: 60%; 
+  }
+
 }

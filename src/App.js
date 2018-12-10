@@ -103,11 +103,13 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
 
 
             { this.state.errorMessage ? 
-            (  <div className="error-container fadeIn">
-            <p>{this.state.errorMessage}</p>
-          </div>):(
-            ''
-          )}
+            ( 
+              <div className="error-container fadeIn">
+                <p>{this.state.errorMessage}</p>
+              </div>
+            ):(
+              ''
+            )}
 
               <div className="email-input-container slideOutDown">
                   <div className="bg-fff">
