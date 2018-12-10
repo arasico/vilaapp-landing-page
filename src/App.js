@@ -20,7 +20,7 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
    constructor(props) {
      super(props);
      this.state = { val:'', errorMessage:'' }
-     
+
      this.handelChange = this.handelChange.bind(this);
      this.callPost = this.callPost.bind(this);
 
@@ -45,24 +45,30 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
       }),
       
     }
- 
+    
 
-      await fetch(baseurl ,data)
-      .then(function(response) {
-        if (!response.ok) {
-            throw Error(response.statusText);
-        }
-        return response;
+   function PostEmail( data) {
+    return fetch(baseurl,data)
+      .then((response) => {
+        response.json()
+        console.log(response.status)
+        return response.status
       })
-      .then(function(response) {
-        console.log("ok, Succsessfuly Added");
+      .then((responseJson) => { 
+        return responseJson;
       })
-      .catch(function(error) {
-        console.log(error);
+      .catch((error) => {
+        console.error(error); 
       });
-  
+  }
+
+  return PostEmail(data)
  
    }
+
+
+
+  
 
    successfully(){
     document.getElementsByClassName("success-message-container")[0].style.display = "block"
@@ -70,23 +76,32 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
    }
 
 
-
-
-
  
-   callPost(){
-     console.log(this.state.val.includes('@'))
-      if(this.state.val !== '' && this.state.val.includes('@') === true  )
+   callPost= async() => {
+     
+      if(this.state.val !== ''   )
       {
         this.setState({errorMessage: ''})
-        this.fetchingData(this.state.val);
+        if(await this.fetchingData(this.state.val) === 200)
         this.successfully();
+        else
+        {
+          this.setState({errorMessage: setError(400)})
+        }
 
       }
       else
       { 
-        this.setState({errorMessage: 'Please insert Valid email Address!'})
+        this.setState({errorMessage: setError(200)})
       }
+
+      function setError (code) {
+        if(code===400)
+          return 'Please insert Valid email Address!'
+        else if (code === 200 )
+          return  'Please insert Your email Address!'
+      }
+
    }
 
 
