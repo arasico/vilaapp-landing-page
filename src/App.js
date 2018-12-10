@@ -20,6 +20,7 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
    constructor(props) {
      super(props);
      this.state = { val:'', errorMessage:'' }
+     
      this.handelChange = this.handelChange.bind(this);
      this.callPost = this.callPost.bind(this);
 
