@@ -12,6 +12,9 @@ import twitter from './assets/img/twitter.svg';
 import linkedin from './assets/img/linkedin.svg';
 import checked from './assets/img/checked.svg';
 
+const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
+
+
 
  class Index extends Component {
    constructor(props) {
@@ -28,12 +31,70 @@ import checked from './assets/img/checked.svg';
 
    }
 
+   fetchingData = async(email) => {
+     console.log(email) 
+    const data={
+      method:'POST',
+      headers:{
+          Accept:'application/json',
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email:email 
+      }),
+      
+  }
+ 
+  //  await fetch(baseurl ,data)
+  //   .then( response => response.json())
+  //   .then(json => console.log(json.status))
+
+//   await fetch(baseurl ,data)
+//   .then( 
+//     function(response) {
+ 
+//       return response.json(); 
+//   })
+//   .then(function(json){ 
+//    console.log(json.status)
+// })
+//   .catch (err => console.log(err))  
+
+
+
+    await fetch(baseurl ,data)
+    .then(function(response) {
+      if (!response.ok) {
+          throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then(function(response) {
+      console.log("ok, Succsessfuly Added");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+ 
+ 
+   }
+
+   successfully(){
+    document.getElementsByClassName("success-message-container")[0].style.display = "block"
+    document.getElementsByClassName("email-input-container")[0].style.display = "none"
+   }
+
+
+
+
+
+ 
    callPost(){
       if(this.state.val !== '')
       {
-      // alert("your email addres: " + this.state.val)
-       document.getElementsByClassName("success-message-container")[0].style.display = "block"
-       document.getElementsByClassName("email-input-container")[0].style.display = "none"
+        this.fetchingData(this.state.val);
+        this.successfully();
+
       }
       else
       {
@@ -59,8 +120,7 @@ import checked from './assets/img/checked.svg';
                       <input
                       className="input-email"
                       placeholder="Email"
-                      name="email"
-                      autocomplete="off"
+                      name="email" 
                       onChange={this.handelChange}
                       value={this.state.val}
                       />
@@ -81,10 +141,10 @@ import checked from './assets/img/checked.svg';
 
           <div className="socila-container">
               <ul>
-                <li> <a href="https://www.linkedin.com/company/vilaapp/about/"  target="_blank" ><img src={linkedin} alt="vilaapp linkedin" height="25" width="25" /></a></li>
-                <li> <a href="https://www.facebook.com/vilaapp.ir/"  target="_blank" ><img src={facebook} alt="vilaapp facebook" height="25" width="25" /></a></li>
-                <li> <a href="https://www.instagram.com/VilaApp.ir/"  target="_blank" ><img src={instagram} alt="vilaapp instagram" height="25" width="25" /></a></li>
-                <li> <a href="https://twitter.com/vilaapp"  target="_blank" ><img src={twitter} alt="vilaapp twitter" height="25" width="25" /></a></li>
+                <li> <a href="https://www.linkedin.com/company/vilaapp/about/"  rel="noopener" ><img src={linkedin} alt="vilaapp linkedin" height="25" width="25" /></a></li>
+                <li> <a href="https://www.facebook.com/vilaapp.ir/"  rel="noopener" ><img src={facebook} alt="vilaapp facebook" height="25" width="25" /></a></li>
+                <li> <a href="https://www.instagram.com/VilaApp.ir/"  rel="noopener" ><img src={instagram} alt="vilaapp instagram" height="25" width="25" /></a></li>
+                <li> <a href="https://twitter.com/vilaapp"  rel="noopener" ><img src={twitter} alt="vilaapp twitter" height="25" width="25" /></a></li>
       
               </ul>
           </div>
