@@ -82,17 +82,19 @@ const baseurl = 'http://api.vilaapp.ir/api/v1/newsletter';
       if(this.state.val !== ''   )
       {
         this.setState({errorMessage: ''})
-        if(await this.fetchingData(this.state.val) === 200)
+        var  statusCode = await this.fetchingData(this.state.val);
+        
+        if( statusCode === 200)
         this.successfully();
         else
         {
-          this.setState({errorMessage: setError(400)})
+          this.setState({errorMessage: setError(statusCode)})
         }
 
       }
       else
       { 
-        this.setState({errorMessage: setError(200)})
+        this.setState({errorMessage: setError(statusCode)})
       }
 
       function setError (code) {
